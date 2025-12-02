@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="FS.Framework.Reflection">
+        <HintPath>..\..\FS.Framework\FS.Framework.Reflection\bin\Debug\net9.0\FS.Framework.Reflection.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="12.0.0" />
+      <PackageReference Include="FS.Framework.Reflection" Version="1.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="2.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\FS.CompetenceFile.Domain\FS.CompetenceFile.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

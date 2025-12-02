@@ -1,0 +1,6 @@
+﻿services:
+  fs.competencefile.api:
+    image: fs.competencefile.api
+    build:
+      context: .
+      dockerfile: FS.CompetenceFile.Api/Dockerfile

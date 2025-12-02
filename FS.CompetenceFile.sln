@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FS.CompetenceFile.Application", "FS.CompetenceFile.Application\FS.CompetenceFile.Application.csproj", "{474A96A3-55B4-418E-9573-9D8D52431B76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FS.CompetenceFile.Domain", "FS.CompetenceFile.Domain\FS.CompetenceFile.Domain.csproj", "{9569B95C-6F16-4516-AD38-8923B1F16A1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FS.CompetenceFile.Infrastructure", "FS.CompetenceFile.Infrastructure\FS.CompetenceFile.Infrastructure.csproj", "{6403DDCF-4ECC-42C0-B5B1-28FFFF15EC2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FS.CompetenceFile.Api", "FS.CompetenceFile.Api\FS.CompetenceFile.Api.csproj", "{12505D87-9E51-4301-925E-FB76A3A5CBE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{017714B8-23F9-4A11-B58C-02072DE12987}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E7686664-978B-43E1-BB76-3FB83126A4AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FS.CompetenceFile.Test.Integration", "FS.CompetenceFile.Test.Integration\FS.CompetenceFile.Test.Integration.csproj", "{51A48536-17A6-49FE-9F72-1E20212A2E36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FS.CompetenceFile.Test.Unit", "FS.CompetenceFile.Test.Unit\FS.CompetenceFile.Test.Unit.csproj", "{929EFD46-211B-4987-A484-40F852C347F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{474A96A3-55B4-418E-9573-9D8D52431B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{474A96A3-55B4-418E-9573-9D8D52431B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{474A96A3-55B4-418E-9573-9D8D52431B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{474A96A3-55B4-418E-9573-9D8D52431B76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9569B95C-6F16-4516-AD38-8923B1F16A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9569B95C-6F16-4516-AD38-8923B1F16A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9569B95C-6F16-4516-AD38-8923B1F16A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9569B95C-6F16-4516-AD38-8923B1F16A1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6403DDCF-4ECC-42C0-B5B1-28FFFF15EC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6403DDCF-4ECC-42C0-B5B1-28FFFF15EC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6403DDCF-4ECC-42C0-B5B1-28FFFF15EC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6403DDCF-4ECC-42C0-B5B1-28FFFF15EC2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12505D87-9E51-4301-925E-FB76A3A5CBE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12505D87-9E51-4301-925E-FB76A3A5CBE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12505D87-9E51-4301-925E-FB76A3A5CBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12505D87-9E51-4301-925E-FB76A3A5CBE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51A48536-17A6-49FE-9F72-1E20212A2E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A48536-17A6-49FE-9F72-1E20212A2E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A48536-17A6-49FE-9F72-1E20212A2E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A48536-17A6-49FE-9F72-1E20212A2E36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{929EFD46-211B-4987-A484-40F852C347F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{929EFD46-211B-4987-A484-40F852C347F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{929EFD46-211B-4987-A484-40F852C347F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{929EFD46-211B-4987-A484-40F852C347F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{51A48536-17A6-49FE-9F72-1E20212A2E36} = {E7686664-978B-43E1-BB76-3FB83126A4AD}
+		{929EFD46-211B-4987-A484-40F852C347F3} = {E7686664-978B-43E1-BB76-3FB83126A4AD}
+	EndGlobalSection
+EndGlobal
