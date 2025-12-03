@@ -1,8 +1,10 @@
-﻿using FS.CompetenceFile.Application.Interfaces.FileSystem;
+﻿using System.Text;
+using FS.CompetenceFile.Application.Interfaces.FileSystem;
 using FS.CompetenceFile.Domain.Services;
 using FS.CompetenceFile.Domain.Services.FileSystemService;
 using FS.Framework.Helpers.Extensions.Files;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 namespace FS.CompetenceFile.Infrastructure.FileSystem;
 
@@ -10,7 +12,7 @@ namespace FS.CompetenceFile.Infrastructure.FileSystem;
 /// Provides file system operations for handling file uploads and storage.
 /// Implements <see cref="IFileSystemService"/> to offer functionalities such as saving files to a specified path.
 /// </summary>
-public class FileSystemService : IFileSystemService
+public class FileSystemService(ILogger<FileSystemService> logger) : IFileSystemService
 {
     /// <summary>
     /// Saves the provided file to the specified path asynchronously.
@@ -39,5 +41,41 @@ public class FileSystemService : IFileSystemService
         }
 
         return result;
+    }
+
+    public async ValueTask<string> ExtractTextFromPdfAsync(string base64Pdf)
+    {
+        return await Task.Run(() =>
+        {
+            try
+            {
+                var pdfBytes = Convert.FromBase64String(base64Pdf);
+
+                using var stream = new MemoryStream(pdfBytes);
+                using var reader = new iText.Kernel.Pdf.PdfReader(stream);
+                using var pdfDocument = new iText.Kernel.Pdf.PdfDocument(reader);
+                var textBuilder = new StringBuilder();
+
+                for (int i = 1; i <= pdfDocument.GetNumberOfPages(); i++)
+                {
+                    var page = pdfDocument.GetPage(i);
+                    var strategy = new iText.Kernel.Pdf.Canvas.Parser.Listener.LocationTextExtractionStrategy();
+                    var processor = new iText.Kernel.Pdf.Canvas.Parser.PdfCanvasProcessor(strategy);
+                    processor.ProcessPageContent(page);
+                    var pageText = strategy.GetResultantText();
+                    if (!string.IsNullOrWhiteSpace(pageText))
+                    {
+                        textBuilder.AppendLine(pageText);
+                    }
+                }
+
+                return textBuilder.ToString();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error extracting text from PDF");
+                return string.Empty;
+            }
+        });
     }
 }
